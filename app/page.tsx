@@ -47,7 +47,7 @@ const CountdownHtml = ({ countdown }) => {
   );
 };
 
-export function MonitorModel(props) {
+function MonitorModel(props) {
   const { nodes, materials } = useGLTF('/monitor.glb');
   const videoTexture = useVideoTexture('/videos/video1.mp4');
   return (
@@ -71,7 +71,7 @@ export function MonitorModel(props) {
   );
 }
 
-export function Backdrop(props) {
+function Backdrop(props) {
   const { nodes, materials } = useGLTF('/library.glb')
   return (
     <group {...props} dispose={null} rotation={[Math.PI / 32,-Math.PI / 4, 0]} scale={[15, 15, 15]}>
@@ -225,7 +225,7 @@ export function Backdrop(props) {
   )
 }
 
-export function Table(props) {
+function Table(props) {
   const { nodes, materials } = useGLTF('/table.glb');
 
   // Assign textures to the table's face materials
