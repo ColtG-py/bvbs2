@@ -1,7 +1,7 @@
 'use client';
-import React, { useRef, useState, useEffect, forwardRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, Box, Stars, Float, ScrollControls, Scroll, useScroll, useVideoTexture, Html } from '@react-three/drei';
+import { useGLTF, Box, Float, ScrollControls, Scroll, useScroll, useVideoTexture, Html } from '@react-three/drei';
 import * as THREE from 'three'
 
 
@@ -293,17 +293,7 @@ export function Table(props) {
     </group>
   );
 }
-
-const CentralBox = forwardRef((props, ref) => {
-  const videoTexture = useVideoTexture('/videos/video1.mp4');
-  return (
-    <Box ref={ref} args={[12.8, 7.2, 0.5]} castShadow receiveShadow {...props}>
-      <meshBasicMaterial map={videoTexture} toneMapped={false} />
-    </Box>
-  );
-});
-
-const ConnectedBox = ({ position, centralRef, texture }) => {
+const ConnectedBox = ({ position, texture }) => {
   const ref = useRef();
   return (
     <>
